@@ -8,8 +8,17 @@
     @if (!$customerCount)
         <div class="alert alert-warning">No Customer Added</div>
     @endif
+
+    <div class="d-flex justify-content-between align-items-center">
+        <a href="{{ route('customers.create') }}" class="btn btn-outline-primary">Add New <i class="fas fa-plus"></i></a>
+        <form class="w-25 input-group mb-3" action="{{ URL::current() }}" method="get">
+            <input type="text" class="form-control" placeholder="Search..." name="search">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i
+                    class="fas fa-search"></i></button>
+        </form>
+    </div>
     <table class="table table-hover">
-        <thead>
+        <thead class="table-primary">
             <td>Name</td>
             <td>Email</td>
             <td>Age</td>
@@ -61,4 +70,6 @@
 
         </tbody>
     </table>
+
+    {{ $customers->withQueryString()->links() }}
 @endsection

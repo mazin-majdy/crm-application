@@ -1,7 +1,7 @@
 @extends('site.master')
 @section('title', 'Create New Customer | ' . env('APP_NAME'))
 @section('content')
-    <h1 class="text-secondary">Add New Customer</h1>
+    <h1 class="text-secondary fs-5">Add New Customer</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">

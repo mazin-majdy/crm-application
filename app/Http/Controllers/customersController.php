@@ -14,12 +14,13 @@ class customersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
         $customers = $user->customers()
+            ->filter($request->query())
             ->orderBy('id', 'DESC')
-            ->get();
+            ->paginate(5);
         $success = session('success');
         $customerCount = $user->customers()->count();
         return view('site.index', compact('customers', 'success', 'customerCount'));

@@ -38,11 +38,12 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('customers.index') }}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="{{ route('customers.index') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Customer Controller</div>
+                <div class="sidebar-brand-text mx-3">Contacts Controller</div>
             </a>
 
             <!-- Divider -->
@@ -61,7 +62,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Customers
+                Contacts
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -69,11 +70,11 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fab fa-intercom"></i>
-                    <span>Customers</span>
+                    <span>Contacts</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('customers.index') }}">All Customers</a>
+                        <a class="collapse-item" href="{{ route('customers.index') }}">All Contacts</a>
                         <a class="collapse-item" href="{{ route('customers.create') }}">Add New</a>
                     </div>
                 </div>
@@ -152,6 +153,8 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                <img src="https://ui-avatars.com/api/size=40/?name={{ Auth::user()->name }}&background=4e73df&color=efefef&rounded=true"
+                                    alt="">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -161,7 +164,8 @@
                                     Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
